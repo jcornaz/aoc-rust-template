@@ -9,6 +9,7 @@ rust-version = "1.65"
 [dependencies]
 
 [dev-dependencies]
+rstest = { version = "0.15.0", default-features = false }
 
 [profile.dev]
 opt-level = 1

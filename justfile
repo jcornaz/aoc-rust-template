@@ -1,7 +1,14 @@
 set dotenv-load
 
-@_choose:
-	just --choose --unsorted
+@_list:
+	just --list --unsorted
+
+new day:
+	touch src/day{{day}}_input.txt
+	cp day.template src/day{{day}}.rs
+	sed -i 's/<INPUT_FILENAME>/day{{day}}_input.txt/' src/day{{day}}.rs
+	echo 'mod day{{day}};' >> src/lib.rs
+	cargo fmt
 
 # Perform all verifications (compile, test, lint, etc.)
 verify: lint test
