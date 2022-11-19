@@ -1,0 +1,14 @@
+[package]
+name = "aoc-template"
+version = "0.0.0"
+license = "Unlicense"
+authors = ["Jonathan Cornaz"]
+edition = "2021"
+rust-version = "1.65"
+
+[dependencies]
+
+[dev-dependencies]
+
+[profile.dev]
+opt-level = 1

@@ -1,0 +1,26 @@
+name: verify
+
+on:
+  push:
+    branches: ["[0-9]+.x", main, rc, beta, alpha]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CARGO_INCREMENTAL: 0
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@cargo-binstall
+      - uses: taiki-e/install-action@cargo-hack
+      - run: cargo binstall --no-confirm --force cargo-msrv
+      - uses: extractions/setup-just@v1
+      - run: just verify
