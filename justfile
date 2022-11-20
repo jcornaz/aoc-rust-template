@@ -35,8 +35,8 @@ clean:
 	rm -rf node_modules
 
 # Genearte an empty input and solution for each day
-@reset:
-	for d in $(seq 25); do \
+@reset fromDay="1":
+	for d in $(seq {{fromDay}} 25); do \
 		prefix=day$(printf "%02d" $d); \
 		source_file_name="$prefix.rs"; \
 		input_file_name="$(echo $prefix)_input.txt"; \
