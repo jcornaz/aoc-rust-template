@@ -3,12 +3,14 @@ set dotenv-load
 @_list:
 	just --list --unsorted
 
-new day:
-	touch src/day{{day}}_input.txt
-	cp day.template src/day{{day}}.rs
-	sed -i 's/<INPUT_FILENAME>/day{{day}}_input.txt/' src/day{{day}}.rs
-	echo 'mod day{{day}};' >> src/lib.rs
-	cargo fmt
+year := "2021"
+
+# Fetch your personal input (requires an `AOC_SESSION`)
+get-input day:
+	curl -s \
+		-H "Cookie: session=$AOC_SESSION" \
+		"https://adventofcode.com/{{year}}/day/{{day}}/input" \
+		> "src/day$(printf "%02d" {{day}})_input.txt"
 
 # Perform all verifications (compile, test, lint, etc.)
 verify: lint test
