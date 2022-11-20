@@ -13,7 +13,7 @@ get-input day:
 		> "src/day$(printf "%02d" {{day}})_input.txt"
 
 # Perform all verifications (compile, test, lint, etc.)
-verify: lint test
+verify: test lint
 
 # Watch the source files and run `just verify` when source changes
 watch:
@@ -33,6 +33,17 @@ clean:
 	rm -rf target
 	rm -f Cargo.lock
 	rm -rf node_modules
+
+# Reset all solutions by copying the `template.rs` module
+reset:
+	for d in $(seq 25); do \
+		prefix=day$(printf "%02d" $d); \
+		source_file_name="$prefix.rs"; \
+		input_file_name="$(echo $prefix)_input.txt"; \
+		cp src/template.rs src/$source_file_name; \
+		sed -i "s/\"INPUT\"/include_str!\(\"$input_file_name\"\)/" src/day$(printf "%02d" $d).rs; \
+		touch src/day$(printf "%02d" $d)_input.txt; \
+	done
 
 # Install cargo dev-tools used by the `verify` recipe (requires rustup to be already installed)
 install-dev-tools:

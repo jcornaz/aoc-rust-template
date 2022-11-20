@@ -1,20 +1,27 @@
-fn part_1(_input: &str) -> i64 {
+#[allow(unused)]
+fn part_1(input: &str) -> i64 {
     todo!()
 }
 
-fn part_2(_input: &str) -> i64 {
+#[allow(unused)]
+fn part_2(input: &str) -> i64 {
     todo!()
 }
 
 #[cfg(test)]
-mod tests {
-    use rstest::rstest;
+mod unit_tests {
+    #[allow(unused)]
+    use super::*;
+}
+
+#[cfg(test)]
+mod acceptance_tests {
 
     use super::*;
 
     const EXAMPLE: &str = "";
 
-    const INPUT: &str = include_str!("<INPUT_FILENAME>");
+    const INPUT: &str = include_str!("day25_input.txt");
 
     #[rstest]
     #[ignore]
