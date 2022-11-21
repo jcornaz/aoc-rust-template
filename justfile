@@ -3,7 +3,7 @@ set dotenv-load
 @_list:
 	just --list --unsorted
 
-year := "2021"
+year := "2022"
 
 # Fetch your personal input (requires an `AOC_SESSION`)
 get-input day:
@@ -21,12 +21,12 @@ watch:
 
 # Run the tests
 test:
-	cargo hack test --feature-powerset
+	cargo test
 
 # Run the static code analysis
 lint:
 	cargo fmt -- --check
-	cargo hack clippy --feature-powerset --all-targets 
+	cargo clippy
 
 # Clean up compilation output
 clean:
@@ -37,12 +37,10 @@ clean:
 # Genearte an empty input and solution for each day
 @reset fromDay="1":
 	for d in $(seq {{fromDay}} 25); do \
-		prefix=day$(printf "%02d" $d); \
-		source_file_name="$prefix.rs"; \
-		input_file_name="$(echo $prefix)_input.txt"; \
-		cp src/template.rs src/$source_file_name; \
-		sed -i "s/\"INPUT\"/include_str!\(\"$input_file_name\"\)/" src/$source_file_name; \
-		touch src/$input_file_name; \
+		module=day$(printf "%02d" $d); \
+		cp src/template.rs src/$module.rs; \
+		cp -r src/template src/$module; \
+		sed -i "s/\"INPUT\"/include_str!\(\"$module\/input.txt\"\)/" src/$module.rs; \
 	done
 
 # Install cargo dev-tools used by the `verify` recipe (requires rustup to be already installed)
