@@ -1,6 +1,6 @@
 # aoc-template
 
-My template for solving the [advent-of-code](https://adventofcode.com) puzzles with rust
+My template for solving the [advent-of-code](https://adventofcode.com) puzzles with rust.
 
 ## Unlicense
 

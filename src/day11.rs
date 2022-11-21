@@ -1,21 +1,13 @@
-#[allow(unused)]
-fn part_1(input: &str) -> i64 {
-    todo!()
+pub fn part_1(input: &str) -> anyhow::Result<u64> {
+    Ok(input.parse()?)
 }
 
-#[allow(unused)]
-fn part_2(input: &str) -> i64 {
-    todo!()
-}
-
-#[cfg(test)]
-mod unit_tests {
-    #[allow(unused)]
-    use super::*;
+pub fn part_2(input: &str) -> anyhow::Result<u64> {
+    Ok(input.parse()?)
 }
 
 #[cfg(test)]
-mod acceptance_tests {
+mod tests {
 
     use super::*;
 
@@ -28,8 +20,8 @@ mod acceptance_tests {
     #[case::example(EXAMPLE, 0)]
     #[ignore]
     #[case::input(INPUT, 0)]
-    fn test_part_1(#[case] input: &str, #[case] expected: i64) {
-        assert_eq!(part_1(input), expected);
+    fn test_part_1(#[case] input: &str, #[case] expected: u64) {
+        assert_eq!(part_1(input.trim()).unwrap(), expected);
     }
 
     #[rstest]
@@ -37,7 +29,7 @@ mod acceptance_tests {
     #[case::example(EXAMPLE, 0)]
     #[ignore]
     #[case::input(INPUT, 0)]
-    fn test_part_2(#[case] input: &str, #[case] expected: i64) {
-        assert_eq!(part_2(input), expected);
+    fn test_part_2(#[case] input: &str, #[case] expected: u64) {
+        assert_eq!(part_2(input.trim()).unwrap(), expected);
     }
 }
