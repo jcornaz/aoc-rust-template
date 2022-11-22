@@ -7,7 +7,6 @@ edition = "2021"
 rust-version = "1.65"
 
 [dependencies]
-anyhow = "1.0" # <- To easily handle errors
 thiserror = "1.0" # <- To easily create new error types
 grid = "0.9.0" # <- A 2d grid datastructure
 nom = "7.1" # <- Parser combinator library (for advanced parsing)

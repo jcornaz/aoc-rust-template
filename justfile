@@ -3,7 +3,7 @@ set dotenv-load
 @_list:
 	just --list --unsorted
 
-year := "2022"
+year := "2015"
 
 # Fetch your personal input (requires an `AOC_SESSION`)
 get-input day:
@@ -38,6 +38,7 @@ clean:
 @reset fromDay="1":
 	for d in $(seq {{fromDay}} 25); do \
 		module=day$(printf "%02d" $d); \
+		rm -rf src/$module; \
 		cp src/template.rs src/$module.rs; \
 		cp -r src/template src/$module; \
 		sed -i "s/\"INPUT\"/include_str!\(\"$module\/input.txt\"\)/" src/$module.rs; \
