@@ -4,9 +4,10 @@ set dotenv-load
 	just --list --unsorted
 
 year := "2015"
+day := "1"
 
 # Fetch your personal input (requires an `AOC_SESSION`)
-get-input day:
+get-input:
 	curl -s \
 		-H "Cookie: session=$AOC_SESSION" \
 		"https://adventofcode.com/{{year}}/day/{{day}}/input" \
@@ -17,11 +18,15 @@ verify: test lint
 
 # Watch the source files and run `just verify` when source changes
 watch:
-	cargo watch -- just verify
+	cargo watch -- just day={{day}} test-day lint
 
-# Run the tests
+# Run all the tests
 test:
 	cargo test
+
+# Run the tests of the current day
+test-day:
+	cargo test -- day$(printf "%02d" {{day}})
 
 # Run the static code analysis
 lint:

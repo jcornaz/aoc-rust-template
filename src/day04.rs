@@ -14,7 +14,9 @@ mod tests {
 
     use super::*;
 
-    const EXAMPLE: &str = "";
+    const EXAMPLE: &str = r#"
+
+    "#;
 
     const INPUT: &str = include_str!("day04/input.txt");
 
