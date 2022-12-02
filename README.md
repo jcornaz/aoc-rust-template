@@ -23,7 +23,7 @@ My template for solving the [advent-of-code](https://adventofcode.com) puzzles w
 3. Write your tests and solve the puzzle in `src/day$DAY.rs`
 5. Once you think you're done, enable the test `input` test case and watch it fail.
    The failure message contains your puzzle answer.
-6. If your answer is correct, write it as the expected value for that test. (so that all the test pass)
+6. If your answer is correct, write it as the expected value for that test. (so that all the tests pass)
 7. Refactor as you please
 
 
