@@ -12,7 +12,7 @@ grid = "0.9.0" # <- A 2d grid datastructure
 nom = "7.1" # <- Parser combinator library (for advanced parsing)
 
 [dev-dependencies]
-rstest = { version = "0.15.0", default-features = false }
+rstest = { version = "0.16.0", default-features = false }
 
 [profile.dev]
 opt-level = 1
