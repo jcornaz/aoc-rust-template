@@ -11,6 +11,7 @@ My template for solving the [advent-of-code](https://adventofcode.com) puzzles w
 2. Log-in on https://adventofcode.com/
 3. Inspect your cookies and copy content of the `AOC_SESSION` cookie
 4. Export an `AOC_SESSION` environment variable with the content of the `AOC_COOKIE`
+5. Update the `year` variable in the `justfile` to the year you would like to solve
 
 
 ### Each day
