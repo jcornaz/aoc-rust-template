@@ -43,9 +43,8 @@ clean:
 	for d in $(seq {{fromDay}} 25); do \
 		module=day$(printf "%02d" $d); \
 		rm -rf src/$module; \
-		cp src/template.rs src/$module.rs; \
 		cp -r src/template src/$module; \
-		sed -i "s/\"INPUT\"/include_str!\(\"$module\/input.txt\"\)/" src/$module.rs; \
+		sed -i "s/\"INPUT\"/include_str!\(\"input.txt\"\)/" src/$module/mod.rs; \
 	done
 
 # Install cargo dev-tools used by the `verify` recipe (requires rustup to be already installed)

@@ -16,7 +16,7 @@ mod tests {
 
     "#;
 
-    const INPUT: &str = include_str!("day01/input.txt");
+    const INPUT: &str = include_str!("input.txt");
 
     #[rstest]
     #[ignore = "not implemented"]
