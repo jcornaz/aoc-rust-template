@@ -4,28 +4,27 @@ set dotenv-load
 	just --list --unsorted
 
 year := "2015"
-day := "1"
 
 # Fetch your personal input (requires an `AOC_SESSION`)
-get-input:
+get-input day:
 	curl -s \
 		-H "Cookie: session=$AOC_SESSION" \
 		"https://adventofcode.com/{{year}}/day/{{day}}/input" \
 		> "src/day$(printf "%02d" {{day}})/input.txt"
 
 # Perform all verifications (compile, test, lint, etc.)
-verify: test lint
+verify: test-all lint
 
 # Watch the source files and run `just verify` when source changes
-watch:
-	cargo watch -- just day={{day}} test-day lint
+watch day:
+	cargo watch -- just lint test {{day}}
 
 # Run all the tests
-test:
+test-all:
 	cargo test
 
 # Run the tests of the current day
-test-day:
+test day:
 	cargo test -- day$(printf "%02d" {{day}})
 
 # Run the static code analysis
@@ -57,6 +56,6 @@ install-dev-tools:
 
 # Install a git hook to run tests before every commits
 install-git-hooks:
-	echo '#!/usr/bin/env sh' > .git/hooks/pre-commit
-	echo 'just verify' >> .git/hooks/pre-commit
-	chmod +x .git/hooks/pre-commit
+	echo '#!/usr/bin/env sh' > .git/hooks/pre-push
+	echo 'just verify' >> .git/hooks/pre-push
+	chmod +x .git/hooks/pre-push

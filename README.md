@@ -17,11 +17,11 @@ My template for solving the [advent-of-code](https://adventofcode.com) puzzles w
 
 *(replace `$DAY` by the current day of the month)*
 
-1. get your personal puzzle input with `just day=$DAY get-input`
-2. start the tests with `just day=$DAY watch"`
+1. get your personal puzzle input with `just get-input $DAY`
+2. start the tests with `just watch $DAY"`
    (it'll automatically rerun the tests when the source change)
 3. Write your tests and solve the puzzle in `src/day$DAY.rs`
-5. Once you think you're done, enable the test `input` test case and watch it fail.
+5. Once you think you're done, enable the `input` test case and watch it fail.
    The failure message contains your puzzle answer.
 6. If your answer is correct, write it as the expected value for that test. (so that all the tests pass)
 7. Refactor as you please
