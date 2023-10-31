@@ -6,11 +6,6 @@ authors = ["Jonathan Cornaz"]
 edition = "2021"
 rust-version = "1.73"
 
-[dependencies]
-thiserror = "1.0.50" # <- To easily create new error types
-grid = "0.11.0" # <- A 2d grid datastructure
-nom = "7.1.3" # <- Parser combinator library (for advanced parsing)
-
 [dev-dependencies]
 rstest = { version = "0.18.2", default-features = false }
 
