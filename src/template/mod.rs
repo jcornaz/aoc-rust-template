@@ -1,11 +1,11 @@
-type Output = u64;
+type Output = i64;
 
-pub fn part_1(input: &str) -> Output {
-    input.parse().unwrap()
+pub fn part_1(input: &str) -> anyhow::Result<Output> {
+    Ok(input.parse()?)
 }
 
-pub fn part_2(input: &str) -> Output {
-    input.parse().unwrap()
+pub fn part_2(input: &str) -> anyhow::Result<Output> {
+    Ok(input.parse()?)
 }
 
 #[cfg(test)]
@@ -24,7 +24,7 @@ mod tests {
     #[ignore = "not implemented"]
     #[case::input(INPUT, 0)]
     fn test_part_1(#[case] input: &str, #[case] expected: Output) {
-        assert_eq!(part_1(input.trim()), expected);
+        assert_eq!(part_1(input.trim()).unwrap(), expected);
     }
 
     #[rstest]
@@ -33,6 +33,6 @@ mod tests {
     #[ignore = "not implemented"]
     #[case::input(INPUT, 0)]
     fn test_part_2(#[case] input: &str, #[case] expected: Output) {
-        assert_eq!(part_2(input.trim()), expected);
+        assert_eq!(part_2(input.trim()).unwrap(), expected);
     }
 }
