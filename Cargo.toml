@@ -7,7 +7,7 @@ edition = "2021"
 rust-version = "1.73"
 
 [dependencies]
-anyhow = "1.0.75"
+anyhow = "1.0.76"
 
 [dev-dependencies]
 rstest = { version = "0.18.2", default-features = false }
