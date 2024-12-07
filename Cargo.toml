@@ -1,16 +1,14 @@
 [package]
 name = "aoc-template"
 version = "0.0.0"
-license = "Unlicense"
 authors = ["Jonathan Cornaz"]
 edition = "2021"
-rust-version = "1.73"
 
 [dependencies]
-anyhow = "1.0"
+eyre = "0.6"
 
 [dev-dependencies]
-rstest = { version = "0.18.2", default-features = false }
+rstest = { version = "0.23.0", default-features = false }
 
 [profile.dev]
 opt-level = 1

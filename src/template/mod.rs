@@ -1,10 +1,10 @@
 type Output = i64;
 
-pub fn part_1(input: &str) -> anyhow::Result<Output> {
+pub fn part_1(input: &str) -> eyre::Result<Output> {
     Ok(input.parse()?)
 }
 
-pub fn part_2(input: &str) -> anyhow::Result<Output> {
+pub fn part_2(input: &str) -> eyre::Result<Output> {
     Ok(input.parse()?)
 }
 
