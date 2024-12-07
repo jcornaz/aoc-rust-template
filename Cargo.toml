@@ -5,6 +5,8 @@ authors = ["Jonathan Cornaz"]
 edition = "2021"
 
 [dependencies]
+aline = "1.0.1"
+cell-grid = { version = "0.1.2", features = ["aline"] }
 eyre = "0.6"
 
 [dev-dependencies]

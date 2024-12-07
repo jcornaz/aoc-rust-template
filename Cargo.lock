@@ -12,11 +12,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "aline"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f42903e7a80d0b06f23177c6ed5c3907f913877ec8cc2a9a053d70c3eff88e69"
+
+[[package]]
 name = "aoc-template"
 version = "0.0.0"
 dependencies = [
+ "aline",
+ "cell-grid",
  "eyre",
  "rstest",
+]
+
+[[package]]
+name = "cell-grid"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0e9621e37f4174568e1db2499c63d685500486e7f046a3d33c3f8f4601fcdcf8"
+dependencies = [
+ "aline",
 ]
 
 [[package]]
