@@ -5,12 +5,12 @@ authors = ["Jonathan Cornaz"]
 edition = "2021"
 
 [dependencies]
-aline = "1.0.1"
-cell-grid = { version = "0.1.2", features = ["aline"] }
+aline = "1"
+cell-grid = { version = "0.1", features = ["aline"] }
 eyre = "0.6"
 
 [dev-dependencies]
-rstest = { version = "0.23.0", default-features = false }
+rstest = { version = "0.23", default-features = false }
 
 [profile.dev]
 opt-level = 1
