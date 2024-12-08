@@ -13,9 +13,9 @@ dependencies = [
 
 [[package]]
 name = "aline"
-version = "1.0.1"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f42903e7a80d0b06f23177c6ed5c3907f913877ec8cc2a9a053d70c3eff88e69"
+checksum = "34220fea35bfe3b4dd0ee41d7641e08e5cc9f9e8d38764ba1b6d9cb7b1cd82d5"
 
 [[package]]
 name = "aoc-template"
@@ -29,11 +29,12 @@ dependencies = [
 
 [[package]]
 name = "cell-grid"
-version = "0.1.2"
+version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e9621e37f4174568e1db2499c63d685500486e7f046a3d33c3f8f4601fcdcf8"
+checksum = "0a3ed1ceacf6d5918ac2533cc546479e823aebb7071845be04f90f4dae68c102"
 dependencies = [
  "aline",
+ "rustversion",
 ]
 
 [[package]]
@@ -164,6 +165,12 @@ checksum = "cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92"
 dependencies = [
  "semver",
 ]
+
+[[package]]
+name = "rustversion"
+version = "1.0.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248"
 
 [[package]]
 name = "semver"
