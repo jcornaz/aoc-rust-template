@@ -29,9 +29,9 @@ dependencies = [
 
 [[package]]
 name = "cell-grid"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0a3ed1ceacf6d5918ac2533cc546479e823aebb7071845be04f90f4dae68c102"
+checksum = "2bae469d5d50768cb2ac7ba86295b7196e12dd76adbe81cc7bd65f6c94d1fd0b"
 dependencies = [
  "aline",
  "rustversion",
